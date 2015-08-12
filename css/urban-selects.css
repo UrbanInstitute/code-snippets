@@ -1,0 +1,31 @@
+.styled-select.filter select{
+  pointer-events: none; /*NOT SURE ABOUT THIS IN IE NEED TO TEST*/
+}
+/*Dropdowns*/
+.styled-select select {
+   background: transparent;
+   width: 330px;
+   height: 45px;
+   padding-left: 10px;
+   font: 16px Lato;
+   /*font-size: 16px;*/
+   color: #818385;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   -webkit-appearance: none;
+}
+select::-ms-expand {
+ display: none !important;
+}
+.styled-select {
+   /*top: 125px;*/
+   width: 280px;
+   height: 45px;
+   overflow: hidden;
+   background: url(../img/new_arrow.png) no-repeat right #EFEFEF;
+   border: none;
+   z-index: 2;
+   position: fixed;
+   overflow: hidden;
+}

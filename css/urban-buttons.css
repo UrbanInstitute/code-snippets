@@ -1,0 +1,364 @@
+.button-page-list li{
+margin-bottom: 10px;
+    list-style: none;
+}
+
+.urban-button {
+    font-size: 14px;
+    font-family: Lato, sans-serif;
+    padding: 14px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background-color: #1696d2;
+    display: inline-block;
+    line-height: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-right: 1px;
+}
+
+.urban-button:hover {
+    background-color: #000;
+    text-decoration: none;
+}
+
+.urban-tag {
+    border: 1px solid #ccc;
+    color: #666;
+    font: 400 12px/12px Lato, sans-serif;
+    text-transform: uppercase;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    padding: 9px 20px 9px 20px;
+    background-color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.urban-tag:hover {
+    background-color: #1696d2;
+    color: #fff;
+}
+
+.button-share{
+ display: inline-block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -2396px;
+    height: 32px;
+    width: 32px;
+    float: none;
+    margin: 0 auto;   
+}
+.button-share:hover{
+     background-position: 0 -1948px;
+}
+
+.button-facebook {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -2056px;
+    height: 32px;
+    width: 32px;
+}
+
+.button-facebook:hover {
+    background-position: 0 -1609px;
+}
+
+.button-twitter {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -1169px;
+    height: 32px;
+    width: 32px;
+}
+
+.button-twitter:hover {
+    background-position: 0 -1577px;
+}
+
+.button-linkedin {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -1641px;
+    height: 32px;
+    width: 32px;
+}
+
+.button-linkedin:hover {
+    background-position: 0 -1379px;
+}
+
+
+.button-email {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -1449px;
+    height: 32px;
+    width: 32px;
+}
+
+.button-email:hover {
+    background-position: 0 -1271px;
+}
+
+.button-expand {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -2163px;
+    height: 30px;
+    width: 32px;
+}
+
+.button-expand:hover{
+        background-position: 0 -2003px;
+}
+
+.button-play {
+    display: block;
+    background-repeat: no-repeat;
+    background-image: url(http://www.urban.org/sites/all/themes/urban/images/generated/icons-s8fe141aaaa.png);
+    background-position: 0 -2453px;
+    height: 19px;
+    width: 19px;
+}
+
+.button-play:hover{
+        background-position: 0 -2089px;
+}
+.scrolltotop{
+     -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    z-index: 1;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.scrolltotop:after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: "\0020";
+    width: 16.66667px;
+    height: 16.66667px;
+    border-color: #fff;
+    border-style: solid;
+    position: absolute;
+    top: 28px;
+    left: 25px;
+    bottom: auto;
+    right: auto;
+    border-width: 3px 0 0 3px;
+}
+.scrolltotop:hover{
+ background-color:#1696d2;   
+}
+
+.scroll-down{
+     -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    z-index: 1;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.scroll-down:after {
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    content: "\0020";
+    width: 16.66667px;
+    height: 16.66667px;
+    border-color: #fff;
+    border-style: solid;
+    position: absolute;
+    top: 22px;
+    left: 25px;
+    bottom: auto;
+    right: auto;
+    border-width: 3px 0 0 3px;
+}
+.scroll-down:hover{
+ background-color:#1696d2;   
+}
+
+
+.button-left{
+     -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    z-index: 1;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.button-left:after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: "\0020";
+    width: 10px;
+    height: 10px;
+    border-color: #fff;
+    border-style: solid;
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    bottom: auto;
+    right: auto;
+    border-width: 3px 0 0 3px;
+}
+.button-left:hover{
+ background-color:#1696d2;   
+}
+
+
+.button-right{
+     -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    z-index: 1;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.button-right:after {
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+    content: "\0020";
+    width: 10px;
+    height: 10px;
+    border-color: #fff;
+    border-style: solid;
+    position: absolute;
+    top: 14px;
+    left: 12px;
+    bottom: auto;
+    right: auto;
+    border-width: 3px 0 0 3px;
+}
+.button-right:hover{
+ background-color:#1696d2;   
+}
+
+
+.dropdown-sm{
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 25px;
+    height: 25px;
+    background-color: #e7e6e6;
+    z-index: 1;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.dropdown-sm:after {
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+    content: "\0020";
+    width: 5px;
+    height: 5px;
+    border-color: #999999;
+    border-style: solid;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    bottom: auto;
+    right: auto;
+    border-width: 2px 0 0 2px;
+}
+.dropdown-sm:hover{
+ background-color:#1696d2;   
+}
+.dropdown-sm:hover:after{
+        border-color: #fff;
+}
+
+.close-sm{
+    display: inline-block;
+    position: relative;
+    text-indent: -1000em;
+    width: 25px;
+    height: 25px;
+    background-color: #e7e6e6;
+    z-index: 1;
+    padding: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 2px #fff;   
+}
+.close-sm:after {
+    content: "\0026";
+    width: 5px;
+    height: 5px;
+    border-color: #999999;
+    border-style: solid;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    bottom: auto;
+    right: auto;
+    border-width: 2px 0 0 2px;
+}
+.close-sm:hover{
+ background-color:#1696d2;   
+}
+.close-sm:hover:after{
+        border-color: #fff;
+}
+
