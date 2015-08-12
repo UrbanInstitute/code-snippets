@@ -344,16 +344,12 @@ margin-bottom: 10px;
 }
 .close-sm:after {
     content: "\0026";
-    width: 5px;
-    height: 5px;
-    border-color: #999999;
-    border-style: solid;
     position: absolute;
+    color:#999;
     top: 14px;
     left: 14px;
     bottom: auto;
     right: auto;
-    border-width: 2px 0 0 2px;
 }
 .close-sm:hover{
  background-color:#1696d2;   
