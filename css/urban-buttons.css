@@ -343,10 +343,10 @@ margin-bottom: 10px;
     box-shadow: 0 0 2px #fff;   
 }
 .close-sm:after {
-    -webkit-transform: rotate(45deg) translateX(4px) translateY(4px);
-    -moz-transform: rotate(45deg) translateX(4px) translateY(4px);
-    -ms-transform: rotate(45deg) translateX(4px) translateY(4px);
-    -o-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -webkit-transform: rotate(-135deg) translateX(2px) translateY(2px);
+    -moz-transform: rotate(-135deg) translateX(2px) translateY(2px);
+    -ms-transform: rotate(-135deg) translateX(2px) translateY(2px);
+    -o-transform: rotate(-135deg) translateX(2px) translateY(2px);
     transform: rotate(-135deg) translateX(2px) translateY(2px);
     content: "\0026";
     width: 5px;
