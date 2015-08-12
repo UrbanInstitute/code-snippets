@@ -343,6 +343,29 @@ margin-bottom: 10px;
     box-shadow: 0 0 2px #fff;   
 }
 .close-sm:after {
+    -webkit-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -moz-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -ms-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -o-transform: rotate(45deg) translateX(4px) translateY(4px);
+    transform: rotate(-135deg) translateX(2px) translateY(2px);
+    content: "\0026";
+    width: 5px;
+    height: 5px;
+    border-color: #999999;
+    border-style: solid;
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    bottom: auto;
+    right: auto;
+    border-width: 2px 0 0 2px;
+}
+.close-sm:before {
+    -webkit-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -moz-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -ms-transform: rotate(45deg) translateX(4px) translateY(4px);
+    -o-transform: rotate(45deg) translateX(4px) translateY(4px);
+    transform: rotate(45deg) translateX(4px) translateY(4px);
     content: "\0026";
     position: absolute;
     color:#999;
@@ -354,7 +377,7 @@ margin-bottom: 10px;
 .close-sm:hover{
  background-color:#1696d2;   
 }
-.close-sm:hover:after{
+.close-sm:hover:after, .close-sm:hover:before{
         border-color: #fff;
 }
 
