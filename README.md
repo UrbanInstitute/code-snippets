@@ -5,3 +5,13 @@
 
 ##urban-website
 - [templates/large-iframe.html](templates/large-iframe.html): Code example for iframe that allows us to embed iframes into our site at a width greater than the width of the content well. it also makes the iframe react responsively and break consistently along our site's break-points.
+
+- [templates/buttons.html](templates/buttons.html): Code example for various types of buttons for off-site features that mimic on-site styles.
+
+- [templates/header.html](templates/header.html): Code example of persistent feature template header for off-site features that mimics on-site behavior.
+
+- [templates/logos.html](templates/logos.html): pre-coded svg versions of Urban's logo for use in various applications. All logos link back to urban.org
+
+- [templates/text.html](templates/text.html): CSS-ified version of Urban's site-wide text styles for use in off-site features and interactives
+
+- [templates/urban-selects.html](templates/urban-selects.html): Code version of Urban dropdown menus.
