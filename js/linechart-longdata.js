@@ -133,7 +133,7 @@ function linechart(div, id) {
 
     gy.selectAll("text")
         .attr("x", -4)
-        .attr("dy", 2);
+        .attr("dy", 4);
 
     //nest data by GROUP variable
     data_nest = d3.nest().key(function (d) {
