@@ -40,6 +40,18 @@ p, ul, li {
     color: #666;
 }
 
+hr{
+   width: 150px;
+  display: inline-block;
+  border: 3px solid #1696d2;
+  margin-top: 55px;
+    margin-bottom:55px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;   
+}
+
+
 p a{
  color: #1696d2;
     text-decoration: none;
