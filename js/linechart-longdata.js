@@ -4,6 +4,7 @@ var MOBILE_THRESHOLD = 600;
 var FORMATTER,
     $LINEDIV,
     GROUP,
+    GROUPS,
     LINEVAL,
     YEARVAL,
     NUMTICKS,
@@ -65,6 +66,7 @@ function linechart(div, id) {
         .range([height, 0]);
 
     var color = d3.scale.ordinal()
+        .domain(GROUPS)
         .range(COLORS);
 
     var xAxis = d3.svg.axis()
@@ -79,9 +81,10 @@ function linechart(div, id) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    color.domain(d3.keys(data_long[0]).filter(function (key) {
-        return key == GROUP;
-    }));
+    //use this instead if you don't care which color = which group (rare). Remove the color.domain line above if using this
+//    color.domain(d3.keys(data_long[0]).filter(function (key) {
+//        return key == GROUP;
+//    }));
 
     data = data_long.map(function (d) {
         return {
@@ -181,6 +184,8 @@ function lchart() {
     LINEVAL = "assaultrate";
     //column name of grouping variable
     GROUP = "cluster";
+    //names of the groups in the same order as the colors you want to draw them with
+    GROUPS = [27, 29];
     //column name of X variable
     YEARVAL = "year";
     //how to format Y axis ticks

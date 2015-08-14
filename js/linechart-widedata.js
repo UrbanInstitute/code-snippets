@@ -4,6 +4,7 @@ var MOBILE_THRESHOLD = 600;
 var FORMATTER,
     $LINEDIV,
     YEARVAL,
+    GROUPS,
     NUMTICKS,
     COLORS,
     MOBILE_TICKS,
@@ -66,6 +67,7 @@ function linechart(div, id) {
         .range([height, 0]);
 
     var color = d3.scale.ordinal()
+        .domain(GROUPS)
         .range(COLORS);
 
     var xAxis = d3.svg.axis()
@@ -80,9 +82,10 @@ function linechart(div, id) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    color.domain(d3.keys(data[0]).filter(function (key) {
-        return key != YEARVAL;
-    }));
+    //use this instead if you don't care which color = which group (rare). Remove the color.domain line above if using this
+    //color.domain(d3.keys(data[0]).filter(function (key) {
+    //    return key != YEARVAL;
+    //}));
 
     var linegroups = color.domain().map(function (name) {
         return {
@@ -180,10 +183,12 @@ function linechart(div, id) {
 }
 
 //configure chart. want a bunch of charts? make a bunch of these.
-function lchart() {
+function achart() {
     //id of div
-    $LINEDIV = $("#linechart");
+    $LINEDIV = $("#assaultchart");
     COLORS = ["#1696d2", "#fdbf11"];
+    //names of the column groups in the same order as the colors you want to draw them with
+    GROUPS = ["assaultrate_cl27", "assaultrate_cl29"];
     //column name of X variable
     YEARVAL = "year";
     //how to format Y axis ticks
@@ -198,17 +203,45 @@ function lchart() {
     linechart_aspect_height_mobile = 1;
 
     //draw the chart to the div
-    linechart("#linechart");
+    linechart("#assaultchart");
 }
 
-//draw your responsive chart. if making multiple charts, make an external function that calls them all, and then call that drawgraphics function here
+function rchart() {
+    //id of div
+    $LINEDIV = $("#robchart");
+    COLORS = ["#1696d2", "#fdbf11"];
+    //names of the column groups in the same order as the colors you want to draw them with
+    GROUPS = ["robrate_cl27", "robrate_cl29"];
+    //column name of X variable
+    YEARVAL = "year";
+    //how to format Y axis ticks
+    FORMATTER = d3.format(',0f');
+    //number of ticks on big and small screens. can be the same.
+    NUMTICKS = 14;
+    MOBILE_TICKS = 7;
+    //leave this.
+    isMobile = false;
+    //change the height ratio depending on the shape of your graph
+    linechart_aspect_height = 0.6;
+    linechart_aspect_height_mobile = 1;
+
+    //draw the chart to the div
+    linechart("#robchart");
+}
+
+//draw your responsive chart. if making multiple charts, make an external function that calls them all, and then call that drawgraphics function on window load
+function linecharts() {
+    achart();
+    rchart();
+}
+
 $(window).load(function () {
     if (Modernizr.svg) { // if svg is supported, draw dynamic chart
         d3.csv(linechart_data_url, function (annualrates) {
             data_wide = annualrates;
 
-            lchart();
-            window.onresize = lchart;
+            linecharts();
+            window.onresize = linecharts;
         });
     }
 });
