@@ -1,0 +1,40 @@
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+}
+
+
+#graph {
+    width: 100%;
+}
+
+/*line chart value line*/
+.chartline {
+    fill: none;
+    stroke-width: 1.5px;
+}
+
+/*standard axes*/
+.axis {
+    font-size: 12px;
+    color: #333;
+}
+
+.axis path {
+    display: none;
+}
+
+.axis line {
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.axis .minor line {
+    stroke: #bbb;
+    stroke-dasharray: 2, 2;
+}
+
+.legend {
+    font-size: 12px;
+    color: #333;
+}
