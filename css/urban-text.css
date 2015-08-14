@@ -100,6 +100,7 @@ font-family: Georgia, serif;
     line-height: 16px;
     font-style: italic;
     color: #333;
+    margin-bottom: 20px;
 }
 .image-credit{
  float: right;
@@ -137,4 +138,17 @@ font-family: Georgia, serif;
     height: 32px;
     margin-left: -18px;
     background-color: #fff;
+}
+
+.quote-attribution{
+ display: block;
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.copy {
+  font-size: 0.75em;
 }
