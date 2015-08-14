@@ -8,14 +8,14 @@ var FORMATTER,
     YEARVAL,
     NUMTICKS,
     COLORS,
-    MOBILE_TICKS;
+    MOBILE_TICKS,
+    linechart_aspect_height,
+    linechart_aspect_height_mobile;
 
 //globals
 var linechart_data_url = "data/linerates.csv";
 var linechart_aspect_width = 1;
-//change the height ratio depending on the shape of your graph. leave width at 1
-var linechart_aspect_height = 0.6;
-var linechart_aspect_height_mobile = 1;
+
 var isMobile = false;
 var data_long;
 
@@ -190,6 +190,9 @@ function lchart() {
     MOBILE_TICKS = 7;
     //leave this.
     isMobile = false;
+    //change the height ratio depending on the shape of your graph
+    linechart_aspect_height = 0.6;
+    linechart_aspect_height_mobile = 1;
 
     //draw the chart to the div
     linechart("#linechart");
