@@ -3,8 +3,6 @@ var MOBILE_THRESHOLD = 600;
 //configure in each graph call
 var FORMATTER,
     $LINEDIV,
-    GROUP,
-    LINEVAL,
     YEARVAL,
     NUMTICKS,
     COLORS,
@@ -13,11 +11,11 @@ var FORMATTER,
     linechart_aspect_height_mobile;
 
 //globals
-var linechart_data_url = "data/linerates_long.csv";
+var linechart_data_url = "data/linerates_wide.csv";
 var linechart_aspect_width = 1;
 
 var isMobile = false;
-var data_long;
+var data_wide;
 
 //format years as 'XX
 var yearf = d3.format("02d");
@@ -31,6 +29,9 @@ function formatYear(d) {
 }
 
 function linechart(div, id) {
+
+    data = data_wide;
+
     var margin = {
         top: 25,
         right: 15,
@@ -79,35 +80,43 @@ function linechart(div, id) {
         .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    color.domain(d3.keys(data_long[0]).filter(function (key) {
-        return key == GROUP;
+    color.domain(d3.keys(data[0]).filter(function (key) {
+        return key != YEARVAL;
     }));
 
-    data = data_long.map(function (d) {
+    var linegroups = color.domain().map(function (name) {
         return {
-            name: d[GROUP],
-            year: +d[YEARVAL],
-            val: +d[LINEVAL]
+            name: name,
+            values: data.map(function (d) {
+                return {
+                    year: d[YEARVAL],
+                    val: +d[name]
+                };
+            })
         };
     });
-
     x.domain(d3.extent(data, function (d) {
         return d.year;
     }));
 
     //if positive/negative values, use full extent for y domain. if all positive, use 0 to max
-    var ymin = d3.min(data, function (d) {
-        return d.val;
+    var ymin = d3.min(linegroups, function (c) {
+        return d3.min(c.values, function (v) {
+            return v.val;
+        });
     });
-
     if (ymin >= 0) {
-        y.domain([0, d3.max(data, function (d) {
-            return d.val;
+        y.domain([0, d3.max(linegroups, function (c) {
+            return d3.max(c.values, function (v) {
+                return v.val;
+            });
         })]);
     } else {
-        y.domain(d3.extent(data, function (d) {
-            return d.val;
-        }));
+        y.domain([ymin, d3.max(linegroups, function (c) {
+            return d3.max(c.values, function (v) {
+                return v.val;
+            });
+        })]);
     }
 
     //make your axes
@@ -152,9 +161,7 @@ function linechart(div, id) {
 
     //draw one line for each GROUP key
     var lines = svg.selectAll(".group")
-        .data(data_nest, function (d) {
-            return d.key;
-        })
+        .data(linegroups)
         .enter().append("g")
         .attr("class", "group");
 
@@ -164,10 +171,10 @@ function linechart(div, id) {
             return line(d.values);
         })
         .attr("id", function (d) {
-            return d.key;
+            return d.name;
         })
         .attr("stroke", function (d) {
-            return color(d.key);
+            return color(d.name);
         });
 
 }
@@ -177,10 +184,6 @@ function lchart() {
     //id of div
     $LINEDIV = $("#linechart");
     COLORS = ["#1696d2", "#fdbf11"];
-    //column name of Y variable
-    LINEVAL = "assaultrate";
-    //column name of grouping variable
-    GROUP = "cluster";
     //column name of X variable
     YEARVAL = "year";
     //how to format Y axis ticks
@@ -202,7 +205,7 @@ function lchart() {
 $(window).load(function () {
     if (Modernizr.svg) { // if svg is supported, draw dynamic chart
         d3.csv(linechart_data_url, function (annualrates) {
-            data_long = annualrates;
+            data_wide = annualrates;
 
             lchart();
             window.onresize = lchart;
