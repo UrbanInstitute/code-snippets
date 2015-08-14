@@ -192,19 +192,20 @@ function legenddraw() {
     var margin = {
         top: 5,
         right: 5,
-        bottom: 5,
+        bottom: 2,
         left: 5
     };
-
-    var width = $legend.width() - margin.left - margin.right;
 
     if ($legend.width() <= MOBILE_THRESHOLD) {
         isMobile = true;
         var height = 50;
     } else {
         isMobile = false;
-        var height = 25;
+        var height = 20;
+        margin.left = 15;
     }
+
+    var width = $legend.width() - margin.left - margin.right;
 
     $legend.empty();
 
