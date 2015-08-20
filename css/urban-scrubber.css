@@ -13,12 +13,12 @@
 	stroke: none;
 }
 #sliderHighlight{
-	fill: #b0d5f1;
+	fill: #1696d2;
 	stroke: none;
 }
 .thumb{
-	fill: #1696d2;
+	fill: #ffffff;
 	stroke: #1696d2;
-	opacity: .8;
+	stroke-width: 4px;
 	cursor: pointer;
 }

@@ -3,12 +3,13 @@
 function drawScrubber(){
 	var width = 240,
 	    height = 45,
-	    radius = 10,
+	    radius = 7,
 		lowerBound = 1900,
-		upperBound = 2015;
+		upperBound = 2015,
+		margin = {top: 0, right: 4, bottom: 0, left: 4};
 
 	var scale = d3.scale.linear()
-		.domain([radius, width-radius])
+		.domain([radius+margin.left, width-radius-margin.right])
 		.range([lowerBound, upperBound]);
 
 	var drag = d3.behavior.drag()
@@ -32,24 +33,24 @@ function drawScrubber(){
 
 	svg.append("rect")
 		.attr("id", "sliderTrack")
-		.attr("x", 0)
-		.attr("y", height/2 - 3)
-		.attr("height", 6)
-		.attr("width", width)
+		.attr("x", margin.left)
+		.attr("y", height/2 - 2)
+		.attr("height", 4)
+		.attr("width", width-margin.right-margin.left)
 		.attr("rx", 2)
 		.attr("ry", 2)
 
 	svg.append("rect")
 		.attr("id", "sliderHighlight")
-		.attr("x", 0)
-		.attr("y", height/2 - 3)
-		.attr("height", 6)
-		.attr("width", width)
+		.attr("x", margin.left)
+		.attr("y", height/2 - 2)
+		.attr("height", 4)
+		.attr("width", width-margin.right-margin.left)
 		.attr("rx", 2)
 		.attr("ry", 2)
 
 	svg.selectAll(".left")
-		.data(d3.range(1).map(function() { return {x: radius, y: height / 2}; }))
+		.data(d3.range(1).map(function() { return {x: radius+margin.left, y: height / 2}; }))
 		.enter()
 		.append("circle")
 		.attr("class","thumb left")
@@ -59,7 +60,7 @@ function drawScrubber(){
 	    .call(drag);
 
 	svg.selectAll(".right")
-		.data(d3.range(1).map(function() { return {x: width - radius, y: height / 2}; }))
+		.data(d3.range(1).map(function() { return {x: width - radius-margin.right, y: height / 2}; }))
 		.enter()
 		.append("circle")
 		.attr("class","thumb right")
@@ -73,7 +74,7 @@ function drawScrubber(){
 	  var isLeft = dragged.classed("left")
 	  var other = (isLeft) ? d3.select("circle.right") : d3.select("circle.left")
 	  if(!isLeft){
-	  	var pos = Math.min(width-radius, Math.max(other.data()[0].x, d3.event.x));
+	  	var pos = Math.min(width-radius-margin.right, Math.max(other.data()[0].x, d3.event.x));
 		var value = Math.round(scale(pos));
 		rightValue.text(value);
 		doStuff(leftValue.text(), value);
@@ -84,7 +85,7 @@ function drawScrubber(){
 	  	dragged
 	    	.attr("cx", d.x = pos);
 	  } else{
-	  	var pos = Math.min(other.data()[0].x, Math.max(radius, d3.event.x));
+	  	var pos = Math.min(other.data()[0].x, Math.max(radius+margin.left, d3.event.x));
 		var value = Math.round(scale(pos));
 		leftValue.text(value);
 		doStuff(value, rightValue.text());
