@@ -38,6 +38,7 @@ body {
     color: #333;
 }
 
+/*page elements*/
 #tag a {
     font-size: 9px;
     /* float: right; */
@@ -54,4 +55,9 @@ body {
 
 #urban {
     color: #1696d2;
+}
+
+.charttitle {
+    font-size: 16px;
+    text-transform: uppercase;
 }
