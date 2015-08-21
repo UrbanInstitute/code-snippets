@@ -16,10 +16,10 @@ $(".styled-select").click(function () {
 $(".styled-select select")
   .change(function(){
     doStuff($(".styled-select.foo select").val());
-    var m = $t(this);
+    var m = $(this);
     if(m.val() == ""){
-      m.style("color", "#818385");
-    }else{ m.style("color", "#333")}
+      m.css("color", "#818385");
+    }else{ m.css("color", "#333")}
 });
 
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
