@@ -13,18 +13,18 @@ $(".styled-select").click(function () {
     }
 });
 
-d3.selectAll(".styled-select select")
-  .on("change", function(){
-    doStuff(d3.select(".styled-select.foo select").node().value);
-    var m = d3.select(this);
-    if(m.node().value == ""){
+$(".styled-select select")
+  .change(function(){
+    doStuff($(".styled-select.foo select").val());
+    var m = $t(this);
+    if(m.val() == ""){
       m.style("color", "#818385");
     }else{ m.style("color", "#333")}
-  })
+});
 
 var isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 if (isFirefox){
-  d3.selectAll(".styled-select select").style("pointer-events","visible");
+  $(".styled-select select").css("pointer-events","visible");
 }
 
 function doStuff(value){
