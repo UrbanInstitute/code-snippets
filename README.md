@@ -18,7 +18,7 @@
 
 - [templates/urban-scrubber.html](templates/urban-scrubber.html): Code version of Urban scrubbable selector.
 
-- [templates/urban-switch.html](templates/urban-selects.html): Code version of Urban on/off toggle switch.
+- [templates/switch.html](templates/switch.html): Code version of Urban on/off toggle switch.
 
 ##urban charts
 - [css/charts.css](css/charts.css): Styles for Urban charts
