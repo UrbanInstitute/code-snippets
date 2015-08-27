@@ -6,7 +6,7 @@ d3.select("#s1").on("click", function () {
         d3.select("#s1.switch")
             .attr("class", "switch off");
         d3.select("#onoff")
-            .style("color", "#1696d2");
+            .style("color", "#F0F0F0");
         show1 = 0;
     } else {
         d3.select("#s1.switch")
