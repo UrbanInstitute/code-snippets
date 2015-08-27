@@ -1,4 +1,4 @@
-.button-page-list li{
+.button-page-list li {
     margin-bottom: 10px;
     list-style: none;
 }
@@ -7,9 +7,8 @@
     font-size: 13px;
     font-family: Lato, sans-serif;
     height: 26px;
-    cursor: pointer;
     border: none;
-    color: white;
+    color: #ffffff;
     display: inline-block;
     line-height: 12px;
     text-align: left;
@@ -17,22 +16,24 @@
     padding-right: 10px;
 }
 
-.switch{
+.switch {
     background-image: url(../img/off-on.png);
     background-repeat: no-repeat;
     width: 49px;
     height: 18px;
     display: inline-block;
     background-size: cover;
+    cursor: pointer;
     margin-right: 9px;
     top: 4px;
     left: 4px;
     position: relative;
 }
+
 .off {
     background-position: 0px 0px;
-
 }
 
-.on{    background-position: 0px -18px;
+.on {
+    background-position: 0px -18px;
 }
