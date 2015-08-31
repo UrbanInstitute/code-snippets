@@ -19,50 +19,59 @@ h1 {
     margin: 0 0 .5em;
 }
 
-h2 {font: 400 24px/1.3em Lato, sans-serif;
-    margin: 0 0 .5em;}
-
-h3 {font: 400 20px/1.3em Lato, sans-serif;
-    margin: 0 0 .5em;}
-
-h4 {font: 600 16px/1.3em Lato, sans-serif;
-    margin: 0 0 .5em;}
-
-h5 {font: 700 14px/1.3em Lato, sans-serif;
+h2 {
+    font: 400 24px/1.3em Lato, sans-serif;
     margin: 0 0 .5em;
-text-transform: uppercase;}
+}
+
+h3 {
+    font: 400 20px/1.3em Lato, sans-serif;
+    margin: 0 0 .5em;
+}
+
+h4 {
+    font: 600 16px/1.3em Lato, sans-serif;
+    margin: 0 0 .5em;
+}
+
+h5 {
+    font: 700 14px/1.3em Lato, sans-serif;
+    margin: 0 0 .5em;
+    text-transform: uppercase;
+}
 
 h6 {}
 
-p, ul, li {
+p,
+ul,
+li {
     font: 400 16px/24px Lato, sans-serif;
     margin: 0 0 .5em;
     color: #666;
 }
 
-hr{
-   width: 150px;
-  display: inline-block;
-  border: 3px solid #1696d2;
-  margin-top: 55px;
-    margin-bottom:55px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;   
+hr {
+    width: 150px;
+    display: inline-block;
+    border: 3px solid #1696d2 !important;
+    margin-top: 55px !important;
+    margin-bottom: 55px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-
-p a{
- color: #1696d2;
+p a {
+    color: #1696d2;
     text-decoration: none;
 }
 
-p a:hover{
- color: #1696d2;   
+p a:hover {
+    color: #1696d2;
 }
 
-li{
- list-style: square;
+li {
+    list-style: square;
 }
 
 .label {
@@ -84,43 +93,45 @@ li{
     color: #666;
 }
 
-.intro-text{
- font: 400 20px/26px Lato, sans-serif;
+.intro-text {
+    font: 400 20px/26px Lato, sans-serif;
     color: #333;
 }
 
-.large-body{
-     font: 400 18px/24px Lato, sans-serif;
+.large-body {
+    font: 400 18px/24px Lato, sans-serif;
 }
 
-.image-caption{
-/*    font: normal 400 14px/20px Lato,sans-serif;*/
-font-family: Georgia, serif;
+.image-caption {
+    /*    font: normal 400 14px/20px Lato,sans-serif;*/
+    
+    font-family: Georgia, serif;
     font-size: 12px;
     line-height: 16px;
     font-style: italic;
     color: #333;
     margin-bottom: 20px;
 }
-.image-credit{
- float: right;
+
+.image-credit {
+    float: right;
     font: normal 400 12px Lato, sans-serif;
     text-transform: uppercase;
-/*    padding-top:2px;*/
+    /*    padding-top:2px;*/
 }
 
-.block-quote{
-     position: relative;
+.block-quote {
+    position: relative;
     display: block;
     margin: 40px 0;
     padding: 35px 0;
     color: #666;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    font: italic 400 16px/25px Georgia,serif;
+    font: italic 400 16px/25px Georgia, serif;
 }
 
-.block-quote:before{
+.block-quote:before {
     position: absolute;
     top: -16px;
     left: 50%;
@@ -140,8 +151,8 @@ font-family: Georgia, serif;
     background-color: #fff;
 }
 
-.quote-attribution{
- display: block;
+.quote-attribution {
+    display: block;
     font-family: Lato, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -150,5 +161,5 @@ font-family: Georgia, serif;
 }
 
 .copy {
-  font-size: 0.75em;
+    font-size: 0.75em;
 }
