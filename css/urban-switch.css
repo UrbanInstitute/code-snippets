@@ -19,7 +19,7 @@
 .switch {
     background-image: url(../img/off-on.png);
     background-repeat: no-repeat;
-    width: 49px;
+    width: 52px;
     height: 18px;
     display: inline-block;
     background-size: cover;
@@ -28,12 +28,19 @@
     top: 4px;
     left: 4px;
     position: relative;
+    border-radius: 8px;
+
+    -webkit-transition:background-position .1s ease-in;  
+    -moz-transition:background-position .1s ease-in;  
+    -o-transition:background-position .1s ease-in;  
+    transition:background-position .1s ease-in; 
+
 }
 
 .off {
-    background-position: 0px 0px;
+    background-position: -31px 0px;
 }
 
 .on {
-    background-position: 0px -18px;
+    background-position: 0px 0px;
 }
