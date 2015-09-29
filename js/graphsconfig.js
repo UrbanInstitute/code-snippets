@@ -1,3 +1,5 @@
+//depending on the project/data, you'll need to adjust/add some chart elements. these are just a starting place for some standard chart types.
+
 var data_long;
 var data_wide;
 
@@ -6,20 +8,25 @@ var long_data_url = "data/linerates_long.csv";
 
 //change chart behavior at this size
 var MOBILE_THRESHOLD = 600;
-//configure in each graph call
-var FORMATTER,
-    XFORMATTER,
-    $GRAPHDIV,
+
+/*configure these as needed in each graph definition function*/
+//where to draw the graph
+var $GRAPHDIV,
     $LEGENDDIV,
+    /*general*/
+    COLORS,
+    BREAKS,
+    LABELS,
+    NUMTICKS,
+    MOBILE_TICKS,
+    FORMATTER,
+    XFORMATTER,
+
+    /*linechart-specific*/
     GROUP,
     GROUPS,
-    BREAKS,
     LINEVAL,
     YEARVAL,
-    NUMTICKS,
-    COLORS,
-    MOBILE_TICKS,
-    LABELS,
     linechart_aspect_height,
     linechart_aspect_height_mobile;
 var isMobile = false;
@@ -43,19 +50,20 @@ function formatYear(d) {
 }
 
 /*LEGENDS*/
-//linear
+//linear - no max/min shown
 function legend1() {
     $LEGENDDIV = $("#legend1");
     COLORS = palette.blue5;
-    BREAKS = [0.2,0.4,0.6,0.8];
+    BREAKS = [0.2, 0.4, 0.6, 0.8];
     FORMATTER = d3.format("%");
     legend("#legend1")
 }
 
+//linear - max/min shown
 function legend1_breaks() {
     $LEGENDDIV = $("#legend1_breaks");
     COLORS = palette.blue5;
-    BREAKS = [0, 0.2,0.4,0.6,0.8,1];
+    BREAKS = [0, 0.2, 0.4, 0.6, 0.8, 1];
     FORMATTER = d3.format("%");
     legend("#legend1_breaks")
 }
@@ -72,30 +80,25 @@ function legend2() {
 /*LINE CHARTS*/
 //line chart using wide-format data
 function lchart_wide() {
-    //id of div
-    $GRAPHDIV = $("#linechart_wide");
-    COLORS = ["#1696d2", "#fdbf11"];
-    //names of the column groups in the same order as the colors you want to draw them with
-    GROUPS = ["assaultrate_cl27", "assaultrate_cl29"];
-    //column name of X variable
-    YEARVAL = "year";
-    //how to format axis ticks
-    FORMATTER = d3.format(',0f');
-    XFORMATTER = formatYear;
-    //number of ticks on big and small screens. can be the same.
-    NUMTICKS = 14;
-    MOBILE_TICKS = 7;
-    //leave this.
-    isMobile = false;
-    //change the height ratio depending on the shape of your graph
-    linechart_aspect_height = 0.6;
-    linechart_aspect_height_mobile = 1;
-    //draw the chart to the div
-    linechart_widedata("#linechart_wide");
-}
-//line chart using long-format data
+        $GRAPHDIV = $("#linechart_wide");
+        COLORS = ["#1696d2", "#fdbf11"];
+        //names of the column groups in the same order as the colors you want to draw them with
+        GROUPS = ["assaultrate_cl27", "assaultrate_cl29"];
+        //column name of X variable
+        YEARVAL = "year";
+        //how to format axis ticks
+        FORMATTER = d3.format(',0f');
+        XFORMATTER = formatYear;
+        //number of ticks for big and small divs. can be the same.
+        NUMTICKS = 14;
+        MOBILE_TICKS = 7;
+        //change the height ratio depending on the shape of your graph
+        linechart_aspect_height = 0.6;
+        linechart_aspect_height_mobile = 1;
+        linechart_widedata("#linechart_wide");
+    }
+    //line chart using long-format data
 function lchart_long() {
-    //id of div
     $GRAPHDIV = $("#linechart_long");
     COLORS = ["#1696d2", "#fdbf11"];
     //column name of Y variable
@@ -109,16 +112,12 @@ function lchart_long() {
     //how to format Y axis ticks
     FORMATTER = d3.format(',0f');
     XFORMATTER = formatYear;
-    //number of ticks on big and small screens. can be the same.
+    //number of ticks for big and divs. can be the same.
     NUMTICKS = 14;
     MOBILE_TICKS = 7;
-    //leave this.
-    isMobile = false;
     //change the height ratio depending on the shape of your graph
     linechart_aspect_height = 0.6;
     linechart_aspect_height_mobile = 1;
-
-    //draw the chart to the div
     linechart_longdata("#linechart_long");
 }
 
