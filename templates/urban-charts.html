@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Chart examples</title>
+    <title>Urban D3 Charts</title>
 
 
     <link rel="stylesheet" type="text/css" href="../lib/bootstrap.min.css">
@@ -21,10 +21,19 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Urban charts</h1>
+                <h1>Urban D3 Charts</h1>
 
-                <h2>Line chart using long data</h2>
-                <div id="linechart" class="graph"></div>
+                <h2>Line charts from differently-formatted data</h2>
+
+                <div id="legend"></div>
+                <div class="col-lg-6">
+                    <h2 class="charttitle">Using wide-format data</h2>
+                    <div id="linechart_wide" class="graph"></div>
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="charttitle">Using long-format data</h2>
+                    <div id="linechart_long" class="graph"></div>
+                </div>
 
                 <div id="tag">
                     <a href="http://www.urban.org/">
@@ -40,6 +49,8 @@
     <script src="../lib/d3.min.js"></script>
     <script src="../lib/modernizr.svg.min.js"></script>
 
+    <script src="../js/graphsconfig.js"></script>
+    <script src="../js/linechart-widedata.js"></script>
     <script src="../js/linechart-longdata.js"></script>
 
 </body>
