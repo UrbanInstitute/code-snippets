@@ -62,20 +62,19 @@ function legend(div) {
             .text(function (d, i) {
                 return FORMATTER(d);
             });
-
-        legend.append("rect")
-            .data(COLORS)
-            .attr("x", function (d, i) {
-                return (i * ls_w) + lp_w;
-            })
-            .attr("y", 20)
-            .attr("width", ls_w - 3)
-            .attr("height", ls_h)
-            .attr("z-index", 10)
-            .style("fill", function (d, i) {
-                return COLORS[i];
-            })
     }
+    legend.append("rect")
+        .data(COLORS)
+        .attr("x", function (d, i) {
+            return (i * ls_w) + lp_w;
+        })
+        .attr("y", 20)
+        .attr("width", ls_w - 3)
+        .attr("height", ls_h)
+        .attr("z-index", 10)
+        .style("fill", function (d, i) {
+            return COLORS[i];
+        })
 }
 
 //categorical legend - will likely need customizing for large #s of categories. This is just a start
