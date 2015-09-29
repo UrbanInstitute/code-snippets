@@ -52,6 +52,14 @@ function legend1() {
     legend("#legend1")
 }
 
+function legend1_breaks() {
+    $LEGENDDIV = $("#legend1_breaks");
+    COLORS = palette.blue5;
+    BREAKS = [0, 0.2,0.4,0.6,0.8,1];
+    FORMATTER = d3.format("%");
+    legend("#legend1_breaks")
+}
+
 //categorical
 function legend2() {
     $LEGENDDIV = $("#legend2");
@@ -117,6 +125,7 @@ function lchart_long() {
 //call your charts. if just making one chart, you can skip this step
 function drawgraphs() {
     legend1();
+    legend1_breaks();
     legend2();
     lchart_wide();
     lchart_long();

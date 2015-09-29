@@ -31,7 +31,12 @@ function legend(div) {
 
     //labelling min and max
     if (BREAKS.length > COLORS.length) {
-        var legend = lsvg.selectAll("g.legend")
+        lp_w = 20;
+        if ($LEGENDDIV.width() < MOBILE_THRESHOLD) {
+            lp_w
+            ls_w = ((width - 40) / COLORS.length);
+        }
+        var legend = svg.selectAll("g.legend")
             .data(BREAKS)
             .enter().append("g")
             .attr("class", "legend");
@@ -39,9 +44,10 @@ function legend(div) {
         legend.append("text")
             .data(BREAKS)
             .attr("x", function (d, i) {
-                return (i * ls_w) + lp_w - 15;
+                return (i * ls_w) + lp_w - 2;
             })
             .attr("y", 15)
+            .attr("text-anchor", "middle")
             .text(function (d, i) {
                 return FORMATTER(d);
             });
