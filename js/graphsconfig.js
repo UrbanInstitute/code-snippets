@@ -10,8 +10,10 @@ var MOBILE_THRESHOLD = 600;
 var FORMATTER,
     XFORMATTER,
     $GRAPHDIV,
+    $LEGENDDIV,
     GROUP,
     GROUPS,
+    BREAKS,
     LINEVAL,
     YEARVAL,
     NUMTICKS,
@@ -22,6 +24,13 @@ var FORMATTER,
     linechart_aspect_height_mobile;
 var isMobile = false;
 
+var palette = {
+    blue5: ["#b0d5f1", "#82c4e9", "#1696d2", "#00578b", "#00152A"],
+    yellow5: ["#fff2cf", "#fdd870", "#fdbf11", "#e88e2d", "#ca5800"],
+    yellowblue: ["#ca5800", "#fcb918", "#ffedcd", "#d7e8f6", "#1696d2", "#00578b"],
+    gray5: ["#ECECEC", "#DCDBDB", "#ccc", "#777", "#000"]
+};
+
 //format years as 'XX - useful for some axes, especially on mobile
 var yearf = d3.format("02d");
 
@@ -31,6 +40,25 @@ function formatYear(d) {
     } else if (d < 2000) {
         return "'" + yearf(Math.abs(1900 - d));
     }
+}
+
+/*LEGENDS*/
+//linear
+function legend1() {
+    $LEGENDDIV = $("#legend1");
+    COLORS = palette.blue5;
+    BREAKS = [0.2,0.4,0.6,0.8];
+    FORMATTER = d3.format("%");
+    legend("#legend1")
+}
+
+//categorical
+function legend2() {
+    $LEGENDDIV = $("#legend2");
+    COLORS = ["#1696d2", "#fdbf11"];
+    //labels for legend
+    LABELS = ["Cluster 27", "Cluster 29"];
+    catlegend("#legend2")
 }
 
 /*LINE CHARTS*/
@@ -54,9 +82,6 @@ function lchart_wide() {
     //change the height ratio depending on the shape of your graph
     linechart_aspect_height = 0.6;
     linechart_aspect_height_mobile = 1;
-    //labels for legend
-    LABELS = ["Cluster 27", "Cluster 29"];
-
     //draw the chart to the div
     linechart_widedata("#linechart_wide");
 }
@@ -91,6 +116,8 @@ function lchart_long() {
 
 //call your charts. if just making one chart, you can skip this step
 function drawgraphs() {
+    legend1();
+    legend2();
     lchart_wide();
     lchart_long();
 }
