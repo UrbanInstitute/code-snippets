@@ -1,6 +1,7 @@
 body {
     font-family: 'Lato', sans-serif;
     color: #333;
+    padding-bottom: 20px;
 }
 
 #graph {
@@ -14,7 +15,8 @@ body {
 }
 /*standard axes*/
 
-.axis {
+.axis,
+.axis-show {
     font-size: 12px;
     color: #333;
 }
@@ -33,12 +35,31 @@ body {
     /*    stroke-dasharray: 2, 2;*/
 }
 
-.legend {
-    font-size: 12px;
-    color: #333;
+.axis-show path,
+.axis-show line {
+    fill: none;
+    stroke-width: 1px;
+    stroke: #000;
+    shape-rendering: crispEdges;
 }
 
+.legend {
+    font-size: 12px;
+    fill: #333;
+}
+/*direct labels for values - e.g. above bar charts*/
+
+.valuetext {
+    font-size: 12px;
+}
+
+.chartlabel {
+    font-size: 14px;
+    color: #333;
+    font-style: italic;
+}
 /*page elements*/
+
 #tag a {
     font-size: 9px;
     /* float: right; */

@@ -21,6 +21,8 @@ var $GRAPHDIV,
     MOBILE_TICKS,
     FORMATTER,
     XFORMATTER,
+    VAL,
+    XVAL,
 
     /*linechart-specific*/
     GROUP,
@@ -62,7 +64,7 @@ function legend1() {
 //linear - max/min shown
 function legend1_breaks() {
     $LEGENDDIV = $("#legend1_breaks");
-    COLORS = palette.blue5;
+    COLORS = palette.yellow5;
     BREAKS = [0, 0.2, 0.4, 0.6, 0.8, 1];
     FORMATTER = d3.format("%");
     legend("#legend1_breaks")
@@ -80,24 +82,25 @@ function legend2() {
 /*LINE CHARTS*/
 //line chart using wide-format data
 function lchart_wide() {
-        $GRAPHDIV = $("#linechart_wide");
-        COLORS = ["#1696d2", "#fdbf11"];
-        //names of the column groups in the same order as the colors you want to draw them with
-        GROUPS = ["assaultrate_cl27", "assaultrate_cl29"];
-        //column name of X variable
-        YEARVAL = "year";
-        //how to format axis ticks
-        FORMATTER = d3.format(',0f');
-        XFORMATTER = formatYear;
-        //number of ticks for big and small divs. can be the same.
-        NUMTICKS = 14;
-        MOBILE_TICKS = 7;
-        //change the height ratio depending on the shape of your graph
-        linechart_aspect_height = 0.6;
-        linechart_aspect_height_mobile = 1;
-        linechart_widedata("#linechart_wide");
-    }
-    //line chart using long-format data
+    $GRAPHDIV = $("#linechart_wide");
+    COLORS = [palette.blue5[2], palette.yellow5[2]];
+    //names of the column groups in the same order as the colors you want to draw them with
+    GROUPS = ["assaultrate_cl27", "assaultrate_cl29"];
+    //column name of X variable
+    YEARVAL = "year";
+    //how to format axis ticks
+    FORMATTER = d3.format(',0f');
+    XFORMATTER = formatYear;
+    //number of ticks for big and small divs. can be the same.
+    NUMTICKS = 14;
+    MOBILE_TICKS = 7;
+    //change the height ratio depending on the shape of your graph
+    linechart_aspect_height = 0.6;
+    linechart_aspect_height_mobile = 1;
+    linechart_widedata("#linechart_wide");
+}
+
+//line chart using long-format data
 function lchart_long() {
     $GRAPHDIV = $("#linechart_long");
     COLORS = ["#1696d2", "#fdbf11"];
@@ -121,13 +124,38 @@ function lchart_long() {
     linechart_longdata("#linechart_long");
 }
 
-//call your charts. if just making one chart, you can skip this step
+//simple bar chart
+function sbar1() {
+    $GRAPHDIV = $("#simplebar");
+    data = data_wide;
+    COLORS = palette.blue5[2];
+    VAL = "assaultrate_cl27";
+    XVAL = "year";
+    FORMATTER = d3.format(",.1f");
+    simplebar("#simplebar");
+}
+
+//recreating simple bar chart from http://www.urban.org/urban-wire/unintended-consequences-delaying-medicare-and-social-security
+function sbar2() {
+    $GRAPHDIV = $("#simplebar2");
+    //if your data is simple and fixed no need to read from an external file
+    data = [{"name":"Medicare Eligibility Age Raised to 67","cost": 369000},{"name":"Medicare Eligibility Age Raised to 70", "cost":1897000}];
+    COLORS = palette.blue5[2];
+    VAL = "cost";
+    XVAL = "name";
+    FORMATTER = d3.format("$.3s");
+    simplebar("#simplebar2");
+}
+
+    //call your charts. if just making one chart, you can skip this step
 function drawgraphs() {
     legend1();
     legend1_breaks();
     legend2();
     lchart_wide();
     lchart_long();
+    sbar1();
+    sbar2();
 }
 
 //on window load, read your data and draw your charts(s)
