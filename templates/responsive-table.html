@@ -1,0 +1,276 @@
+<!-- START INLINE RESPONSIVE TABLE  -->
+<!-- Copy this entire block and paste into the body of the page -->
+<!-- note that each table cell needs to have a corresponding data-title -->
+
+<style type="text/css">table {
+			border-collapse: collapse;
+			padding: 0;
+			margin: 0 0 11px 0;
+			width: 100%;
+		}
+
+		table th {
+			text-align: left;
+			border-bottom: 2px solid #eee;
+			vertical-align: bottom;
+			padding: 0 10px 10px 10px;
+			text-align: right;
+			background-color: #fff;
+		}
+
+		table td {
+			border-bottom: 1px solid #eee;
+			vertical-align: top;
+			padding: 10px;
+			text-align: right;
+		}
+
+		table th:nth-child(1),
+		table td:nth-child(1) {
+			text-align: left;
+			padding-left: 0;
+			font-weight: bold;
+		}
+
+		/* responsive table */
+		@media screen and (max-width: 600px) {
+			table,
+			tbody {
+				display: block;
+				width: 500px !important;
+			}
+
+			thead { display: none; }
+			table tr,
+			table th,
+			table td {
+				display: block;
+				padding: 0;
+				text-align: left;
+				white-space: normal;
+				/*width: 480px;*/
+			}
+
+			table tr {
+				border-bottom: 1px solid #eee;
+				padding-bottom: 11px;
+				margin-bottom: 11px;
+			}
+
+			table th[data-title]:before,
+			table td[data-title]:before {
+				content: attr(data-title) ":\00A0";
+				font-weight: bold;
+			}
+
+			table td {
+				border: none;
+				margin-bottom: 6px;
+				color: #444;
+			}
+
+			table td:empty { display: none; }
+
+			table td:first-child {
+				font-size: 14px;
+				font-weight: bold;
+				margin-bottom: 6px;
+				color: #333;
+			}
+			table td:first-child:before { content: ''; }
+
+		}
+</style>
+<table>
+	<thead>
+		<tr>
+			<th>State</th>
+			<th>&lt; 50% FPL</th>
+			<th>50-100% FPL</th>
+			<th>100-138% FPL3</th>
+			<th>Total</th>
+			<th>Percentage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td data-title="State">Alabama</td>
+			<td data-title=" &lt; 50% FPL">123,000</td>
+			<td data-title="50-100% FPL">88,000</td>
+			<td data-title="100-138% FPL3">36,000</td>
+			<td data-title="Total">247,000</td>
+			<td data-title="Percentage">4.40%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Florida</td>
+			<td data-title=" &lt; 50% FPL">456,000</td>
+			<td data-title="50-100% FPL">359,000</td>
+			<td data-title="100-138% FPL4">173,000</td>
+			<td data-title="Total">988,000</td>
+			<td data-title="Percentage">17.70%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Georgia</td>
+			<td data-title=" &lt; 50% FPL">277,000</td>
+			<td data-title="50-100% FPL">202,000</td>
+			<td data-title="100-138% FPL5">95,000</td>
+			<td data-title="Total">574,000</td>
+			<td data-title="Percentage">10.30%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Idaho</td>
+			<td data-title=" &lt; 50% FPL">32,000</td>
+			<td data-title="50-100% FPL">28,000</td>
+			<td data-title="100-138% FPL6">13,000</td>
+			<td data-title="Total">73,000</td>
+			<td data-title="Percentage">1.30%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Kansas</td>
+			<td data-title=" &lt; 50% FPL">38,000</td>
+			<td data-title="50-100% FPL">43,000</td>
+			<td data-title="100-138% FPL7">13,000</td>
+			<td data-title="Total">93,000</td>
+			<td data-title="Percentage">1.70%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Louisiana</td>
+			<td data-title=" &lt; 50% FPL">119,000</td>
+			<td data-title="50-100% FPL">92,000</td>
+			<td data-title="100-138% FPL8">37,000</td>
+			<td data-title="Total">248,000</td>
+			<td data-title="Percentage">4.50%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Maine</td>
+			<td data-title=" &lt; 50% FPL">15,000</td>
+			<td data-title="50-100% FPL">12,000</td>
+			<td data-title="100-138% FPL9">5,000</td>
+			<td data-title="Total">32,000</td>
+			<td data-title="Percentage">0.60%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Mississippi</td>
+			<td data-title=" &lt; 50% FPL">96,000</td>
+			<td data-title="50-100% FPL">60,000</td>
+			<td data-title="100-138% FPL10">27,000</td>
+			<td data-title="Total">183,000</td>
+			<td data-title="Percentage">3.30%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Missouri</td>
+			<td data-title=" &lt; 50% FPL">119,000</td>
+			<td data-title="50-100% FPL">102,000</td>
+			<td data-title="100-138% FPL11">39,000</td>
+			<td data-title="Total">260,000</td>
+			<td data-title="Percentage">4.70%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Montana1</td>
+			<td data-title=" &lt; 50% FPL">24,000</td>
+			<td data-title="50-100% FPL">20,000</td>
+			<td data-title="100-138% FPL12">8,000</td>
+			<td data-title="Total">51,000</td>
+			<td data-title="Percentage">0.90%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Nebraska</td>
+			<td data-title=" &lt; 50% FPL">18,000</td>
+			<td data-title="50-100% FPL">20,000</td>
+			<td data-title="100-138% FPL13">11,000</td>
+			<td data-title="Total">50,000</td>
+			<td data-title="Percentage">0.90%</td>
+		</tr>
+		<tr>
+			<td data-title="State">North Carolina</td>
+			<td data-title=" &lt; 50% FPL">193,000</td>
+			<td data-title="50-100% FPL">168,000</td>
+			<td data-title="100-138% FPL14">69,000</td>
+			<td data-title="Total">430,000</td>
+			<td data-title="Percentage">7.70%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Oklahoma</td>
+			<td data-title=" &lt; 50% FPL">74,000</td>
+			<td data-title="50-100% FPL">65,000</td>
+			<td data-title="100-138% FPL15">31,000</td>
+			<td data-title="Total">171,000</td>
+			<td data-title="Percentage">3.10%</td>
+		</tr>
+		<tr>
+			<td data-title="State">South Carolina</td>
+			<td data-title=" &lt; 50% FPL">115,000</td>
+			<td data-title="50-100% FPL">74,000</td>
+			<td data-title="100-138% FPL16">42,000</td>
+			<td data-title="Total">230,000</td>
+			<td data-title="Percentage">4.10%</td>
+		</tr>
+		<tr>
+			<td data-title="State">South Dakota</td>
+			<td data-title=" &lt; 50% FPL">13,000</td>
+			<td data-title="50-100% FPL">11,000</td>
+			<td data-title="100-138% FPL17">4,000</td>
+			<td data-title="Total">28,000</td>
+			<td data-title="Percentage">0.50%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Tennessee</td>
+			<td data-title=" &lt; 50% FPL">136,000</td>
+			<td data-title="50-100% FPL">71,000</td>
+			<td data-title="100-138% FPL18">42,000</td>
+			<td data-title="Total">249,000</td>
+			<td data-title="Percentage">4.50%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Texas</td>
+			<td data-title=" &lt; 50% FPL">551,000</td>
+			<td data-title="50-100% FPL">488,000</td>
+			<td data-title="100-138% FPL19">237,000</td>
+			<td data-title="Total">1,276,000</td>
+			<td data-title="Percentage">22.90%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Utah</td>
+			<td data-title=" &lt; 50% FPL">32,000</td>
+			<td data-title="50-100% FPL">37,000</td>
+			<td data-title="100-138% FPL20">18,000</td>
+			<td data-title="Total">86,000</td>
+			<td data-title="Percentage">1.50%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Virginia</td>
+			<td data-title=" &lt; 50% FPL">124,000</td>
+			<td data-title="50-100% FPL">103,000</td>
+			<td data-title="100-138% FPL21">52,000</td>
+			<td data-title="Total">280,000</td>
+			<td data-title="Percentage">5.00%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Wisconsin2</td>
+			<td data-title=" &lt; 50% FPL">0,000</td>
+			<td data-title="50-100% FPL">0,000</td>
+			<td data-title="100-138% FPL22">6,000</td>
+			<td data-title="Total">6,000</td>
+			<td data-title="Percentage">0.10%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Wyoming</td>
+			<td data-title=" &lt; 50% FPL">6,000</td>
+			<td data-title="50-100% FPL">7,000</td>
+			<td data-title="100-138% FPL23">3,000</td>
+			<td data-title="Total">17,000</td>
+			<td data-title="Percentage">0.30%</td>
+		</tr>
+		<tr>
+			<td data-title="State">Total</td>
+			<td data-title=" &lt; 50% FPL">2,559,000</td>
+			<td data-title="50-100% FPL">2,051,000</td>
+			<td data-title="100-138% FPL24">963,000</td>
+			<td data-title="Total">5,574,000</td>
+			<td data-title="Percentage">100.00%</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<!-- END TABLE
