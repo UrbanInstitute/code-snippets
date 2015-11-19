@@ -24,7 +24,7 @@
 - [css/charts.css](css/charts.css): Styles for Urban charts
 
 ###chart types
-- [templates/tilegrid-map](templates/tilegrid-map): State tile grid map - SVG, colored using d3
+- [templates/tilegrid-map](templates/tilegrid-map.html): State tile grid map - SVG, colored using d3
 
 - [js/linechart-longdata.js](js/linechart-longdata.js): Line chart using long data (i.e. data columns = group, year, value)
 
