@@ -24,6 +24,8 @@
 - [css/charts.css](css/charts.css): Styles for Urban charts
 
 ###chart types
+- [templates/tilegrid-map](templates/tilegrid-map): State tile grid map - SVG, colored using d3
+
 - [js/linechart-longdata.js](js/linechart-longdata.js): Line chart using long data (i.e. data columns = group, year, value)
 
 - [js/linechart-widedata.js](js/linechart-widedata.js): Line chart with a legend using wide data (i.e. data columns = year, valuegroup1, valuegroup2) - shows how to call multiple graphs to their own divs on the same page
