@@ -252,6 +252,9 @@
     <script src="../lib/d3.min.js"></script>
 
     <script>
+        //color the svg based on external data. need either fips code or state abbreviation for matching. 
+        
+        //change to d3.scale.linear(), etc for non-ordinal data
         var color = d3.scale.ordinal()
             .domain(["a", "b", "c"])
             .range(["#1696d2", "#fdbf11", "#000"]);
@@ -259,9 +262,11 @@
         d3.csv("data/statedata.csv", function (data) {
 
             var rect = d3.selectAll("rect")
+                //bind data based on attribute of CSV source (d.fips) and attribute of SVG (d3.select(this).attr("fips")) - could bind on state abbreviation (id in svg rects) instead
                 .data(data, function (d) {
                     return (d ? d.fips : d3.select(this).attr("fips"));
                 })
+                //color the rectangle based on a value from your external data
                 .attr("fill", function (d) {
                     return color(d.thing);
                 });
