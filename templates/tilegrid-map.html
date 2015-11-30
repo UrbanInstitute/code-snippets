@@ -68,12 +68,12 @@
                 <text transform="matrix(1 0 0 1 112.9374 343.7475)" class="st1 st2">CT</text>
             </g>
             <g>
-                <rect id="DC" fips="11" x="81" y="381.3" class="st0" width="24.4" height="24.4" />
-                <text transform="matrix(1 0 0 1 85.8643 396.4975)" class="st1 st2">DC</text>
-            </g>
-            <g>
                 <rect id="DE" fips="10" x="107.4" y="354.9" class="st0" width="24.4" height="24.4" />
                 <text transform="matrix(1 0 0 1 112.6425 370.1225)" class="st1 st2">DE</text>
+            </g>
+            <g>
+                <rect id="DC" fips="11" x="81" y="381.3" class="st0" width="24.4" height="24.4" />
+                <text transform="matrix(1 0 0 1 85.8643 396.4975)" class="st1 st2">DC</text>
             </g>
             <g>
                 <rect id="FL" fips="12" x="81" y="434.1" class="st0" width="24.4" height="24.4" />
@@ -259,16 +259,13 @@
         d3.csv("data/statedata.csv", function (data) {
 
             var rect = d3.selectAll("rect")
-                .data(data)
-                .enter().append("rect")
-
-            var rects = d3.selectAll("rect")
                 .data(data, function (d) {
-                    return d.fips;
+                    return (d ? d.fips : d3.select(this).attr("fips"));
                 })
                 .attr("fill", function (d) {
                     return color(d.thing);
                 });
+
         })
     </script>
 
