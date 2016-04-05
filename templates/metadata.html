@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,600,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="../css/urban-text.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+
+<title> </title>
+
+<body>
+
+    <div style="width:100%; max-width:900px; margin:0 auto; position: relative; top: 60px;">
+        <form id="myMetadata" class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Metadata maker</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pageTitle">Title</label>  
+  <div class="col-md-4">
+  <input id="pageTitle" name="pageTitle" type="text" placeholder="Title" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pageDescription">Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" id="pageDescription" placeholder="Description"name="pageDescription"></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="imageURL">Image Link</label>  
+  <div class="col-md-4">
+  <input id="imageURL" name="imageURL" type="text" placeholder="Full url to the image" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="pageURL">URL</label>  
+  <div class="col-md-4">
+  <input id="pageURL" name="pageURL" type="text" placeholder="Web address" class="form-control input-md">
+    
+  </div>
+</div>
+
+
+</fieldset>
+</form>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submitBtn"></label>
+  <div class="col-md-4">
+    <button onclick="submitForm()" id="submitBtn" name="submitBtn" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+
+<div id="metadataOutput"></div>
+
+<script>
+function submitForm() {
+    var thisTitle = document.getElementById("myMetadata").elements.namedItem("pageTitle").value;
+    var thisDesc = document.getElementById("myMetadata").elements.namedItem("pageDescription").value;
+    var thisImg = document.getElementById("myMetadata").elements.namedItem("imageURL").value;
+    var thisUrl = document.getElementById("myMetadata").elements.namedItem("pageURL").value;
+
+
+    var metadata = "<p>Copy the following and paste it within the <head> section of your site. </br> <xmp><meta name='twitter:card' content='summary'></xmp><xmp><meta name='twitter:site' content='@urbaninstitute'></xmp><xmp><meta name='twitter:creator' content='@urbaninstitute'></xmp><xmp><meta name='twitter:title' content='"+thisTitle+"'></xmp><xmp><meta name='twitter:description' content='"+thisDesc+"'></xmp><xmp><meta name='twitter:image' content='"+thisImg+"'></xmp><xmp><meta property='og:title' content='"+thisTitle+"' /></xmp><xmp><meta property='og:description' content='"+thisDesc+"' /></xmp><xmp><meta property='og:image' content='"+thisImg+"' /></xmp><xmp><meta property='og:image:type' content='image/jpeg'></xmp><xmp><meta property='og:image:width' content='400'></xmp><xmp><meta property='og:image:height' content='400'></xmp><xmp><meta property='og:url' content='"+thisUrl+"'></xmp></p>";
+
+    document.getElementById("metadataOutput").innerHTML = metadata;
+
+    console.log(metadata);
+
+}
+</script>
+
+
+</body>

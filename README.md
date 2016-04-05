@@ -20,6 +20,8 @@
 
 - [templates/switch.html](templates/switch.html): Code version of Urban on/off toggle switch.
 
+- [templates/metadata.html](templates/metadata.html): Easy metadata maker for Urban projects
+
 ##urban charts
 - [css/charts.css](css/charts.css): Styles for Urban charts
 
