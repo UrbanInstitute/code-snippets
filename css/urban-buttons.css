@@ -23,6 +23,109 @@ margin-bottom: 10px;
     text-decoration: none;
 }
 
+/*radio buttons*/
+
+input[type=radio].urban-radio {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+input[type=radio].urban-radio + label.radio-label {
+    padding-left: 25px;
+    height: 16px;
+    display: block;
+    line-height: 16px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 13px;
+    vertical-align: middle;
+    font-weight: 400;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+input[type=radio].urban-radio:disabled + label.radio-label {
+    color: #989898;
+}
+
+.urban-radio:checked + label.radio-label {
+    color: #000000;
+}
+
+input[type=radio].urban-radio:checked + label.radio-label {
+    background-position: 0 -16px;
+}
+
+label.radio-label {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+label.radio-label:not(:disabled) {
+    background-image: url("../img/radios.png");
+}
+
+input[type=radio].urban-radio:disabled + label.radio-label {
+    background-image: url("../img/radioNotAvailable.png");
+}
+
+
+/*check boxes*/
+
+input[type=checkbox].urban-checkbox {
+    position: absolute;
+    z-index: -1000;
+    left: -1000px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+input[type=checkbox].urban-checkbox + label.checkbox-label {
+    padding-left: 25px;
+    height: 16px;
+    display: block;
+    line-height: 16px;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    font-size: 13px;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+input[type=checkbox].urban-checkbox:checked + label.checkbox-label {
+    background-position: 0 -16px;
+}
+
+label.checkbox-label {
+    background-image: url("../img/checkboxes.png");
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
 .urban-tag {
     border: 1px solid #ccc;
     color: #666;
