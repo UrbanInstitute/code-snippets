@@ -14,7 +14,7 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../css/charts.css">
     <link rel="stylesheet" type="text/css" href="../css/urban-text.css">
-    <link rel="stylesheet" type="text/css" href="../css/screenshot-text.css">
+
 
 </head>
 
@@ -44,6 +44,31 @@
     <script src="../js/linechart-widedata.js"></script>
     <script src="../js/linechart-longdata.js"></script>
     <script src="../js/simplebar.js"></script>
+    <script>
+    $(document).ready(function(){
+// h1{
+//     font-size: 2.5vw !important;
+// }
+// h2{
+//         font-size: 1.6vw !important;
+// }
+// .chartlabel, .valuetext{
+//     font-size: 1vw;
+// }
+// .tick text{
+//     font-size: 1vw;
+// }
+    setTimeout(function(){
+        var vw = window.innerWidth/100
+        d3.selectAll("h1").style("font-size",2.5*vw + "px")
+        d3.selectAll("h2").style("font-size",1.6*vw + "px")
+        d3.selectAll(".chartlabel").style("font-size",1*vw + "px")
+        d3.selectAll(".valuetext").style("font-size",1*vw + "px")
+        d3.selectAll(".tick text").style("font-size",1*vw + "px")
+    },200);
+
+    })
+    </script>
 
 </body>
 
