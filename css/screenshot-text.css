@@ -1,0 +1,12 @@
+h1{
+	font-size: 2.5vw !important;
+}
+h2{
+	    font-size: 1.6vw !important;
+}
+.chartlabel, .valuetext{
+	font-size: 1vw;
+}
+.tick text{
+	font-size: 1vw;
+}
