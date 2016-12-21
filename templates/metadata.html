@@ -6,12 +6,42 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 
 <title> </title>
-
+<style>
+#metadataOutput{
+    width: calc(100% - 8px);
+    height: 600px;
+}
+.keywordDiv{
+    font-size: 14px;
+    color: black;
+}
+.form-group{
+    margin-top: 17px;
+}
+*:focus{
+    outline: none;
+}
+</style>
 <body>
 
     <div style="width:100%; max-width:900px; margin:0 auto; position: relative; top: 60px;">
         <form id="myMetadata" class="form-horizontal">
             <fieldset>
+
+<!--         <script type="application/ld+json">
+              {
+                "@context": "http://schema.org",
+                "@type": "NewsArticle",
+                "headline": "The People's Sector: A Look at Nonprofit Gains and Losses",
+                "url": "http://apps.urban.org/features/nonprofit-gains-and-losses/",
+                "thumbnailUrl": "http://apps.urban.org/features/nonprofit-gains-and-losses/images/social.jpg",
+                "dateCreated": "2016-11-15T00:00:00.000Z",
+                "articleSection": "Interactive Feature",
+                "creator": ["Brice McKeever","Shena Ashley","Nathan Dietz"],
+                "keywords": ["Nonprofits and Philanthropy"]
+              }
+        </script> -->
+
 
                 <!-- Form Name -->
                 <legend>Metadata maker</legend>
@@ -44,16 +74,84 @@
 
                 <!-- Text input-->
                 <div class="form-group">
-                    <label class="col-md-4 control-label" for="pageURL">URL</label>
+                    <label class="col-md-4 control-label" for="shortURL">Short URL</label>
+                    <div class="col-md-4">
+                        <input id="shortURL" name="shortURL" type="text" placeholder="bit.ly address" class="form-control input-md">
+
+                    </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="pageURL">Full URL</label>
                     <div class="col-md-4">
                         <input id="pageURL" name="pageURL" type="text" placeholder="Web address" class="form-control input-md">
 
                     </div>
                 </div>
 
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="pubDate">Publication date</label>
+                    <div class="col-md-4">
+                        <input id="pubDate" name="pubDate" type="text" placeholder="MM/DD/YYYY" class="form-control input-md">
+
+                    </div>
+                </div>
+                <!-- Text input-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="authors">Authors</label>
+                    <h4><em>Full name from urban.org author page</em></h4>
+                    <div class="col-md-4" id = "authors">
+                        <input id="authors1" name="authors1" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors2" name="authors2" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors3" name="authors3" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors4" name="authors4" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors5" name="authors5" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors6" name="authors6" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors7" name="authors7" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors8" name="authors8" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors9" name="authors9" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors10" name="authors10" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors11" name="authors11" type="text" placeholder="First Last" class="form-control input-md">
+                        <input id="authors12" name="authors12" type="text" placeholder="First Last" class="form-control input-md">
+                    </div>
+                </div>
+        <!-- Text input-->
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="pubDate">Publication date</label>
+            <div class="col-md-4">
+                <div class = "keywordDiv"><input type="checkbox"  value="Adolescents and Youth">Adolescents and Youth</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Aging">Aging</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Children">Children</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Crime and Justice">Crime and Justice</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Economic Growth and Productivity">Economic Growth and Productivity</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Education and Training">Education and Training</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Families">Families</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Finance">Finance</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Food and Nutrition">Food and Nutrition</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Gender and Sexuality">Gender and Sexuality</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Health and Health Policy">Health and Health Policy</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Housing and Housing Finance">Housing and Housing Finance</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Immigrants and Immigration">Immigrants and Immigration</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Income and Wealth">Income and Wealth</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="International Development">International Development</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Job Market and Labor Force">Job Market and Labor Force</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Neighborhoods, Cities, and Metros">Neighborhoods, Cities, and Metros</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Nonprofits and Philanthropy">Nonprofits and Philanthropy</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Pay for Success">Pay for Success</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Poverty, Vulnerability, and the Safety Net">Poverty, Vulnerability, and the Safety Net</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Race and Ethnicity">Race and Ethnicity</div>
+                <div class = "keywordDiv"><input type="checkbox"  value="Taxes and Budget">Taxes and Budget</div>
+            </div>
+        </div>
 
             </fieldset>
         </form>
+
+
+
+
 
         <!-- Button -->
         <div class="form-group">
@@ -64,7 +162,21 @@
         </div>
 
 
-        <div id="metadataOutput"></div>
+        <textarea id="metadataOutput" style ></textarea>
+
+<!--         <script type="application/ld+json">
+              {
+                "@context": "http://schema.org",
+                "@type": "NewsArticle",
+                "headline": "The People's Sector: A Look at Nonprofit Gains and Losses",
+                "url": "http://apps.urban.org/features/nonprofit-gains-and-losses/",
+                "thumbnailUrl": "http://apps.urban.org/features/nonprofit-gains-and-losses/images/social.jpg",
+                "dateCreated": "2016-11-15T00:00:00.000Z",
+                "articleSection": "Interactive Feature",
+                "creator": ["Brice McKeever","Shena Ashley","Nathan Dietz"],
+                "keywords": ["Nonprofits and Philanthropy"]
+              }
+        </script> -->
 
         <script>
             function submitForm() {
@@ -72,12 +184,33 @@
                 var thisDesc = document.getElementById("myMetadata").elements.namedItem("pageDescription").value;
                 var thisImg = document.getElementById("myMetadata").elements.namedItem("imageURL").value;
                 var thisUrl = document.getElementById("myMetadata").elements.namedItem("pageURL").value;
+                var thisShort = document.getElementById("myMetadata").elements.namedItem("shortURL").value;
+                var thisDate = document.getElementById("myMetadata").elements.namedItem("pubDate").value;
+                var dateString = new Date(thisDate).toISOString();
 
-                var metadata = '<p>Copy the following and paste it within the <head> section of your site. </br> <xmp><meta name="twitter:card" content="summary"></xmp><xmp><meta name="twitter:site" content="@urbaninstitute"></xmp><xmp><meta name="twitter:creator" content="@urbaninstitute"></xmp><xmp><meta name="twitter:title" content="'+thisTitle+'"></xmp><xmp><meta name="twitter:description" content="'+thisDesc+'"></xmp><xmp><meta name="twitter:image" content="'+thisImg+'"></xmp><xmp><meta property="og:title" content="'+thisTitle+'" /></xmp><xmp><meta property="og:description" content="'+thisDesc+'" /></xmp><xmp><meta property="og:image" content="'+thisImg+'" /></xmp><xmp><meta property="og:image:type" content="image/jpeg"></xmp><xmp><meta property="og:url" content="'+thisUrl+'"</xmp></p>';
 
+                var metadata = '<meta name="twitter:card" content="summary">\n<meta name="twitter:site" content="@urbaninstitute">\n<meta name="twitter:creator" content="@urbaninstitute">\n<meta name="twitter:title" content="'+thisTitle+'">\n<meta name="twitter:description" content="'+thisDesc+'">\n<meta name="twitter:image" content="'+thisImg+'">\n<meta property="og:title" content="'+thisTitle+'" />\n<meta property="og:description" content="'+thisDesc+'" />\n<meta property="og:image" content="'+thisImg+'" />\n<meta property="og:image:type" content="image/jpeg">\n<meta property="og:url" content="'+thisShort+'"></p>\n\n\n<script type="application/ld+json">\n{\n\t"@context": "http://schema.org",\n\t"@type": "NewsArticle",\n\t"headline": "'+thisTitle+'",\n\t"url": "' +thisUrl+'",\n\t"thumbnailUrl": "'+thisImg+'",\n\t"dateCreated": "' +dateString+ '",\n\t"articleSection": "Interactive Feature",\n\t"creator": [';
+
+               $("#authors input").each(function(){
+                    if($(this).val() != ""){
+                        metadata += '"' + $(this).val() + '",'
+                    }
+                })
+               if (metadata.slice(-1,metadata.length) == ","){
+                metadata = metadata.substring(0, metadata.length - 1);
+               }
+               metadata += '],\n\t"keywords": ['
+               $("input[type=checkbox]").each(function(){
+                if(this.checked){
+                    metadata += '"' + $(this).val() + '",'
+                }
+               })
+               if (metadata.slice(-1,metadata.length) == ","){
+                metadata = metadata.substring(0, metadata.length - 1);
+               }
+               metadata += ']\n}\n<\/script>'
                 document.getElementById("metadataOutput").innerHTML = metadata;
 
-                console.log(metadata);
 
             }
         </script>
