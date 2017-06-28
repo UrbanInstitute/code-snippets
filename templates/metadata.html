@@ -119,7 +119,7 @@
                 </div>
         <!-- Text input-->
         <div class="form-group">
-            <label class="col-md-4 control-label" for="pubDate">Publication date</label>
+            <label class="col-md-4 control-label" for="pubDate">Research area</label>
             <div class="col-md-4">
                 <div class = "keywordDiv"><input type="checkbox"  value="Adolescents and Youth">Adolescents and Youth</div>
                 <div class = "keywordDiv"><input type="checkbox"  value="Aging">Aging</div>
@@ -189,7 +189,7 @@
                 var dateString = new Date(thisDate).toISOString();
 
 
-                var metadata = '<meta name="twitter:card" content="summary">\n<meta name="twitter:site" content="@urbaninstitute">\n<meta name="twitter:creator" content="@urbaninstitute">\n<meta name="twitter:title" content="'+thisTitle+'">\n<meta name="twitter:description" content="'+thisDesc+'">\n<meta name="twitter:image" content="'+thisImg+'">\n<meta property="og:title" content="'+thisTitle+'" />\n<meta property="og:description" content="'+thisDesc+'" />\n<meta property="og:image" content="'+thisImg+'" />\n<meta property="og:image:type" content="image/jpeg">\n<meta property="og:url" content="'+thisShort+'"></p>\n\n\n<script type="application/ld+json">\n{\n\t"@context": "http://schema.org",\n\t"@type": "NewsArticle",\n\t"headline": "'+thisTitle+'",\n\t"url": "' +thisUrl+'",\n\t"thumbnailUrl": "'+thisImg+'",\n\t"dateCreated": "' +dateString+ '",\n\t"articleSection": "Interactive Feature",\n\t"creator": [';
+                var metadata = '<meta name="twitter:card" content="summary">\n<meta name="twitter:site" content="@urbaninstitute">\n<meta name="twitter:creator" content="@urbaninstitute">\n<meta name="twitter:title" content="'+thisTitle+'">\n<meta name="twitter:description" content="'+thisDesc+'">\n<meta name="twitter:image" content="'+thisImg+'">\n<meta property="og:title" content="'+thisTitle+'" />\n<meta property="og:description" content="'+thisDesc+'" />\n<meta property="og:image" content="'+thisImg+'" />\n<meta property="og:image:type" content="image/jpeg">\n<meta property="og:url" content="'+thisShort+'">\n\n\n<script type="application/ld+json">\n{\n\t"@context": "http://schema.org",\n\t"@type": "NewsArticle",\n\t"headline": "'+thisTitle+'",\n\t"url": "' +thisUrl+'",\n\t"thumbnailUrl": "'+thisImg+'",\n\t"dateCreated": "' +dateString+ '",\n\t"articleSection": "Interactive Feature",\n\t"creator": [';
 
                $("#authors input").each(function(){
                     if($(this).val() != ""){
