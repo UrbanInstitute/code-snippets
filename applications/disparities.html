@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+        <title>Urban Data Viz Assignment</title>
+    <style>
+        .container {
+            width: 850px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 1rem 0rem;
+        }
+
+        #race-selector {
+            width: 120px;
+            margin-left: 0.5rem;
+        }
+
+        text {
+            font-size: 0.75em;
+            fill: #808080;
+        }
+    </style>
+
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Disparities in Student Transportation</h1>
+
+            <p>Each <svg width="20px" height="16px"><circle cx="8" cy="10" r="6" fill="#b3b3b3"></circle></svg>represents one block group.</p>
+
+            View percent of elementary school children in block group who are: 
+            <select id="race-selector" class="custom-select custom-select-sm" autocomplete="off">
+                <option selected value="white">White</option>
+                <option value="black">Black</option>
+                <option value="hisp">Hispanic</option>
+                <option value="other">Other race</option>
+            </select>
+            
+            <div id="plot"></div>
+        </div>
+
+  	
+    	<script type="text/javascript" src="https://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="plot.js"></script>
+
+    </body>
+
+</html>
