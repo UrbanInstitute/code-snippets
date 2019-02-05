@@ -183,13 +183,26 @@
                 var thisTitle = document.getElementById("myMetadata").elements.namedItem("pageTitle").value;
                 var thisDesc = document.getElementById("myMetadata").elements.namedItem("pageDescription").value;
                 var thisImg = document.getElementById("myMetadata").elements.namedItem("imageURL").value;
+                var thisImgType = getImgType(thisImg)
                 var thisUrl = document.getElementById("myMetadata").elements.namedItem("pageURL").value;
                 var thisShort = document.getElementById("myMetadata").elements.namedItem("shortURL").value;
                 var thisDate = document.getElementById("myMetadata").elements.namedItem("pubDate").value;
                 var dateString = new Date(thisDate).toISOString();
 
+                function getImgType(imgURL) {
+                    if (imgURL.split('.')[1] === "png") {
+                        var type = "png"
+                    } else if (imgURL.split('.')[1] === "gif") {
+                        var type = "gif"
+                    } else {
+                        var type = "jpeg"
+                    }
 
-                var metadata = '<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:site" content="@urbaninstitute">\n<meta name="twitter:creator" content="@urbaninstitute">\n<meta name="twitter:title" content="'+thisTitle+'">\n<meta name="twitter:description" content="'+thisDesc+'">\n<meta name="twitter:image" content="'+thisImg+'">\n<meta property="og:title" content="'+thisTitle+'" />\n<meta property="og:description" content="'+thisDesc+'" />\n<meta property="og:image" content="'+thisImg+'" />\n<meta property="og:image:type" content="image/jpeg">\n<meta property="og:url" content="'+thisShort+'">\n\n\n<script type="application/ld+json">\n{\n\t"@context": "http://schema.org",\n\t"@type": "NewsArticle",\n\t"headline": "'+thisTitle+'",\n\t"url": "' +thisUrl+'",\n\t"thumbnailUrl": "'+thisImg+'",\n\t"dateCreated": "' +dateString+ '",\n\t"articleSection": "Interactive Feature",\n\t"creator": [';
+                    return type
+                }
+
+
+                var metadata = '<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:site" content="@urbaninstitute">\n<meta name="twitter:creator" content="@urbaninstitute">\n<meta name="twitter:title" content="'+thisTitle+'">\n<meta name="twitter:description" content="'+thisDesc+'">\n<meta name="twitter:image" content="'+thisImg+'">\n<meta property="og:title" content="'+thisTitle+'" />\n<meta property="og:description" content="'+thisDesc+'" />\n<meta property="og:image" content="'+thisImg+'" />\n<meta property="og:image:type" content="image/'+thisImgType+'">\n<meta property="og:url" content="'+thisShort+'">\n\n\n<script type="application/ld+json">\n{\n\t"@context": "http://schema.org",\n\t"@type": "NewsArticle",\n\t"headline": "'+thisTitle+'",\n\t"url": "' +thisUrl+'",\n\t"thumbnailUrl": "'+thisImg+'",\n\t"dateCreated": "' +dateString+ '",\n\t"articleSection": "Interactive Feature",\n\t"creator": [';
 
                $("#authors input").each(function(){
                     if($(this).val() != ""){
