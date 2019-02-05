@@ -190,9 +190,9 @@
                 var dateString = new Date(thisDate).toISOString();
 
                 function getImgType(imgURL) {
-                    if (imgURL.split('.')[1] === "png") {
+                    if (imgURL.split('.').pop() === "png") {
                         var type = "png"
-                    } else if (imgURL.split('.')[1] === "gif") {
+                    } else if (imgURL.split('.').pop() === "gif") {
                         var type = "gif"
                     } else {
                         var type = "jpeg"
